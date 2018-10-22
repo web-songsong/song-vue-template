@@ -1,16 +1,21 @@
 {
   "name": "song-vue-template",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.7",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "npm:build": "vue-cli-service build --target lib --name svt src/components/Index.js"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "vue": "^2.5.17"
   },
   "devDependencies": {
     "@vue/cli-service": "^3.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.17"
   },
   "postcss": {
@@ -23,8 +28,20 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "description": "",
-  "main": "index.js",
+  "description": "this vue template",
+  "main": "dist/svt.common.js",
   "author": "huxuesong",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-songsong/song-vue-template.git"
+  },
+  "keywords": [
+    "vue",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/web-songsong/song-vue-template/issues"
+  },
+  "homepage": "https://websong.xin/"
 }
