@@ -21,3 +21,7 @@ Vue.use(Svt)
 ```
 <svt-template/>
 ```
+
+## 组件文档
+
+### ☞ [homepage](https://blog.websong.xin/)
