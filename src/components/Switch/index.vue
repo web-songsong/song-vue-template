@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'SVTswitch',
+  name: 'SvtSwitch',
   data() {
     return {
       radio: this.flag ? '1' : '0'

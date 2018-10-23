@@ -1,13 +1,14 @@
 {
   "name": "song-vue-template",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "npm:build": "vue-cli-service build --target lib --name svt src/components/Index.js"
   },
   "files": [
-    "dist"
+    "dist/svt.common.js",
+    "dist/svt.css"
   ],
   "dependencies": {
     "vue": "^2.5.17"
