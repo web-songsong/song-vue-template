@@ -1,19 +1,16 @@
 {
   "name": "song-vue-template",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "npm:build": "vue-cli-service build --target lib --name svt src/components/Index.js"
   },
-  "files": [
-    "dist/svt.common.js",
-    "dist/svt.css"
-  ],
   "dependencies": {
     "vue": "^2.5.17"
   },
   "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-service": "^3.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -28,6 +25,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "files": [
+    "dist/svt.common.js",
+    "dist/svt.css"
   ],
   "description": "this vue template",
   "main": "dist/svt.common.js",
