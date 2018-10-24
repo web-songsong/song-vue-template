@@ -106,11 +106,11 @@ export default {
 <style lang="stylus" scoped>
 // @require './index.styl'
 // switch
-$switchWidth = 100px
-$switchHeight = 50px
+$switchWidth = 60px
+$switchHeight = 30px
 // big
-$bigWidth = 200px
-$bigHeight = 100px
+$bigWidth = 80px
+$bigHeight = 40px
 // min
 $minWidth = 40px
 $minHeight = 20px
@@ -178,6 +178,8 @@ $input
     @extend $input
 
   .scrn
+    width $switchWidth
+    height $switchHeight
     @extend $scrn
 
 .big
@@ -192,6 +194,8 @@ $input
     @extend $input
 
   .scrn
+    width $bigWidth
+    height $bigHeight
     @extend $scrn
 
 .min
@@ -206,6 +210,8 @@ $input
     @extend $input
 
   .scrn
+    width $minWidth
+    height $minHeight
     @extend $scrn
 
 .switch
