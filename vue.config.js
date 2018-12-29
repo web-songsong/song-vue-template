@@ -1,4 +1,6 @@
 module.exports = {
-  productionSourceMap: false
+  productionSourceMap: false,
+  configureWebpack: config => {
+    console.log(config)
+  }
 }
-

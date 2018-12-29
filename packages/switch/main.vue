@@ -4,16 +4,13 @@
           @click="inactiveText.length ? radio = 0 : ''"
           v-if="activeText.length"
           :style="textStyle">{{activeText}}</span>
-
     <div class="switch"
          :class="[modulType==='big'? 'big':'',modulType==='min'? 'min':'']">
-
       <input type="radio"
              value="0"
              v-model="radio"
              id="switch-off"
              :disabled="disabled">
-
       <input type="radio"
              value="1"
              v-model="radio"
@@ -21,11 +18,9 @@
              :disabled="disabled">
       <div class="toggle"
            :style="{transitionDuration: animate ? '0.3s' : '0s', background: toogleColor}"></div>
-
       <div class="scrn acti"
            :class="{ disColor: disabled }"
            :style="{transitionDuration: animate ? '0.3s' : '0s', background: changeActiveColor}"></div>
-
     </div>
     <span for="switch-on"
           @click="activeText.length ? radio = 1 : ''"
@@ -33,7 +28,6 @@
           :style="textStyle">{{inactiveText}}</span>
   </div>
 </template>
-
 <script>
 export default {
   name: 'SvtSwitch',
