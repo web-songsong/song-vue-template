@@ -30,7 +30,6 @@
 </template>
 <script>
 export default {
-  name: 'SvtSwitch',
   data() {
     return {
       radio: this.flag ? '1' : '0'
