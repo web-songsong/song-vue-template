@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import path from 'path'
+import router from './router'
 Vue.config.productionTip = false
 const packages = require.context('../packages', true, /main\.vue$/)
 packages.keys().forEach(item => {
@@ -13,5 +14,6 @@ packages.keys().forEach(item => {
   Vue.component(components_name, componentConfig.default || componentConfig)
 })
 new Vue({
+  router,
   render: h => h(App)
 }).$mount('#app')

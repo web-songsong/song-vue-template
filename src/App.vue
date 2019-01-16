@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <svtSwitch />
+    <router-view></router-view>
   </div>
 </template>
-<style  scoped>
-.name {
-  color: red;
-}
-</style>

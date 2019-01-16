@@ -7,7 +7,8 @@
     "npm:build": "vue-cli-service build --target lib --name svt 'build/packages.build.js'"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
@@ -30,7 +31,7 @@
     "dist/svt.common.js",
     "dist/svt.css"
   ],
-  "description": "this vue template",
+  "homepage": "https://websong.xin/",
   "main": "dist/svt.common.js",
   "author": "huxuesong",
   "license": "ISC",
@@ -47,5 +48,5 @@
   "bugs": {
     "url": "https://github.com/web-songsong/song-vue-template/issues"
   },
-  "homepage": "https://websong.xin/"
+  "description": "this vue template"
 }
