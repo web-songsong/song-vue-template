@@ -1,10 +1,10 @@
 {
   "name": "song-vue-template",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "b": "vue-cli-service build --target lib --name test packages/test/asdf.vue"
+    "npm:build": "vue-cli-service build --target lib --name svt 'build/packages.build.js'"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -40,7 +40,9 @@
   },
   "keywords": [
     "vue",
-    "template"
+    "template",
+    "ui",
+    "charmingsong"
   ],
   "bugs": {
     "url": "https://github.com/web-songsong/song-vue-template/issues"

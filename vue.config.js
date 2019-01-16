@@ -1,5 +1,4 @@
-// module.exports = {
-//   productionSourceMap: false,
-//   configureWebpack: config => {
-//   }
-// }
+module.exports = {
+  productionSourceMap: false,
+  css: { extract: false }
+}

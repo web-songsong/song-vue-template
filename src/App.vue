@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <svt-test />
+    <svt-switch />
+
   </div>
 </template>
 <style  scoped>
