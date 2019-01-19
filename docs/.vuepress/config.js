@@ -14,6 +14,6 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    nav: [{}, { text: 'GitHub', link: 'https://github.com/web-songsong' }]
+    nav: [{ 文档 }, { text: 'GitHub', link: 'https://github.com/web-songsong' }]
   }
 }
