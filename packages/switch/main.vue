@@ -30,6 +30,7 @@
 </template>
 <script>
 export default {
+
   data() {
     return {
       radio: this.flag ? '1' : '0'

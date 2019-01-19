@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import path from 'path'
 import router from './router'
+import 'lib-flexible/flexible.js'
 Vue.config.productionTip = false
 const packages = require.context('../packages', true, /main\.vue$/)
 packages.keys().forEach(item => {
