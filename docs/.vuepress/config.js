@@ -1,3 +1,5 @@
+const path = require('path')
+const fs = require('fs')
 module.exports = {
   title: 'song-vue-template',
   description: 'charmingsong',
@@ -14,6 +16,12 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    nav: [{ 文档 }, { text: 'GitHub', link: 'https://github.com/web-songsong' }]
+    nav: [
+      { text: '组件', link: '/components/' },
+      { text: 'GitHub', link: 'https://github.com/web-songsong' }
+    ],
+    sidebar: {
+      '/components/': ['', 'switch']
+    }
   }
 }
