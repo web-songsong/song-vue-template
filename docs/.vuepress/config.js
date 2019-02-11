@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 module.exports = {
+  dest: '../blog',
   title: 'song-vue-template',
   description: 'charmingsong',
   head: [
