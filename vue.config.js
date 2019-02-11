@@ -1,5 +1,4 @@
 const path = require('path')
-console.log('asdfasf')
 module.exports = {
   productionSourceMap: false,
 
