@@ -15,6 +15,8 @@ yarn add -D song-vue-template
 ```javascript
 import Svt from 'song-vue-template'
 
+import 'song-vue-template/dist/svt.css'
+
 Vue.use(Svt)
 ```
 
