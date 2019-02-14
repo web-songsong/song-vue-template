@@ -23,7 +23,7 @@ export default {
   margin 0
   background #de615e
   border 0
-  font-family Roboto, sans-serif
+  font-family Robotoaaa, sans-serif
   font-size 20px
   font-weight 300
   line-height 60px

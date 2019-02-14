@@ -45,7 +45,7 @@ export default {
     background #fff
     border 3px solid #ccc
     border-radius 10px
-    font-family Roboto, sans-serif
+    font-family Robotoaaa, sans-serif
     font-size 20px
     font-weight 300
     line-height 60px

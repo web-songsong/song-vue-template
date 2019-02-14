@@ -1,9 +1,7 @@
 const path = require('path')
 module.exports = {
   productionSourceMap: false,
-
   css: {
-    extract: false,
     loaderOptions: {
       postcss: {
         plugins: [require('postcss-px2rem')],
