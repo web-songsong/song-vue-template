@@ -1,5 +1,5 @@
 <template>
-  <div class="switchWrap">
+  <div class="svt-switch">
     <span for="switch-off"
           @click="inactiveText.length ? radio = 0 : ''"
           v-if="activeText.length"
@@ -31,7 +31,7 @@
 <script>
 export default {
 
-  data() {
+  data () {
     return {
       radio: this.flag ? '1' : '0'
     }
@@ -85,12 +85,12 @@ export default {
     }
   },
   watch: {
-    radio() {
+    radio () {
       this.$emit('change', !!+this.radio)
     }
   },
   computed: {
-    changeActiveColor() {
+    changeActiveColor () {
       if (+this.radio) return this.activeColor
       return this.inactiveColor
     }
@@ -113,7 +113,7 @@ $minHeight = 20px
   margin 0
   padding 0
 
-.switchWrap
+.svt-switch
   display flex
   align-items center
 

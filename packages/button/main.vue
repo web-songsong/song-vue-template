@@ -1,5 +1,5 @@
 <template>
-  <div class="button_wrap"
+  <div class="svt-button"
        :style="userStyle">
     {{text}}
   </div>
@@ -17,7 +17,8 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.button_wrap
+.svt-button
+  $btn()
   width 100%
   height 60px
   margin 0
