@@ -1,12 +1,13 @@
 <template>
   <div>
     <svt-input placeholder="Username"
-               :value.sync="value"
+               v-model="valueaaa"
                :user-style='style' />
     <br>
     <svt-input type="password"
                placeholder="password"
-               :value.sync="pass" />
+               v-model="valuebbb" />
+    {{valueaaa}}
   </div>
 </template>
 
@@ -14,7 +15,8 @@
 export default {
   data () {
     return {
-      value: '',
+      valueaaa: '',
+      valuebbb: '',
       pass: '',
       style: {
         color: 'red'
@@ -24,5 +26,4 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-
 </style>

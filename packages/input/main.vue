@@ -3,7 +3,8 @@
     <input :type="type"
            :placeholder="placeholder"
            :style="userStyle"
-           v-model="val">
+           :value="value"
+           @input="$emit('input', $event.target.value)">
   </div>
 </template>
 
@@ -11,7 +12,6 @@
 export default {
   data () {
     return {
-      val: this.value,
       style: {
         color: 'red'
       }
@@ -25,11 +25,6 @@ export default {
     placeholder: String,
     value: String,
     userStyle: Object
-  },
-  watch: {
-    val (val) {
-      this.$emit('update:value', val)
-    }
   }
 }
 </script>
