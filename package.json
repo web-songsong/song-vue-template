@@ -1,6 +1,6 @@
 {
   "name": "song-vue-template",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
