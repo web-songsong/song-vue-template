@@ -1,5 +1,5 @@
 <template>
   <div>
-    <svt-switch />
+    hahah
   </div>
 </template>
