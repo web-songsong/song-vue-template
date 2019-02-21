@@ -3,6 +3,7 @@ const common = require('./webpack.common')
 const webpack = require('webpack')
 const Dashboard = require('webpack-dashboard')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const config = require('../config')
 // const DashboardPlugin = require('webpack-dashboard/plugin')
 // const dashboard = new Dashboard()
 module.exports = merge(common, {
@@ -12,9 +13,10 @@ module.exports = merge(common, {
     hot: true,
     progress: false,
     overlay: { warnings: false, errors: true },
-    open: true,
-    host: '0.0.0.0',
+    open: false,
+    host: config.dev.host,
     quiet: true,
+    port: config.dev.port,
     clientLogLevel: 'none' // 浏览器不显示编译过程
   },
   plugins: [
@@ -23,9 +25,9 @@ module.exports = merge(common, {
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: [
-          `Your application is running here: ${
-            config.dev.https ? 'https' : 'http'
-          }://${config.dev.host}:${config.dev.port}`
+          `浏览器打开地址: ${config.dev.https ? 'https' : 'http'}://${
+            config.dev.host
+          }:${config.dev.port}`
         ]
       },
       onErrors: () => {
@@ -38,13 +40,14 @@ module.exports = merge(common, {
           const filename = error.file && error.file.split('!').pop()
 
           notifier.notify({
-            title: packageConfig.name,
+            title: require('../package.json').name,
             message: severity + ': ' + error.name,
             subtitle: filename || '',
-            icon: path.join(__dirname, )
+            icon: path.join(__dirname)
           })
         }
-      }
+      },
+      clearConsole: true
     })
     // new DashboardPlugin(dashboard.setData)
   ]

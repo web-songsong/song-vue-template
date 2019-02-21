@@ -3,7 +3,8 @@
   "version": "0.2.13",
   "scripts": {
     "build": "webpack --config build/webpack.dev.js",
-    "start": "webpack-dev-server --config build/webpack.dev.js "
+    "dev": "webpack-dev-server --progress --config build/webpack.dev.js ",
+    "start": "yarn dev"
   },
   "dependencies": {
     "vue": "^2.5.17",
@@ -37,6 +38,7 @@
     "css-loader": "^2.1.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "node-notifier": "^5.4.0",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.6.4",
     "vue-template-compiler": "^2.6.6",
