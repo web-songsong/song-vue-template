@@ -4,5 +4,6 @@ const webpack = require('webpack')
 
 module.exports = merge(common, {
   // devtool: 'source-map',
-  // plugins: [new webpack.HashedModuleIdsPlugin()]
+  plugins: [new webpack.HashedModuleIdsPlugin()],
+  mode: 'none'
 })

@@ -1,22 +1,23 @@
 const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const config = require('../config')
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+  return path.resolve(__dirname, '..', dir)
 }
 module.exports = {
   context: path.resolve(__dirname, '..'),
   entry: './examples/entry.js',
   output: {
-    filename: '[name].js',
+    filename: path.posix.join(
+      config.build.assetsSubDirectory,
+      'js/[name].[chunkhash].js'
+    ),
     path: config.build.assetsRoot
   },
   plugins: [
-    new CleanWebpackPlugin([config.build.assetsRoot]),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.join('index.html')
@@ -44,9 +45,12 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src')]
+        include: [resolve('examples')],
+        options: {
+          babelrc: false,
+          plugins: ['dynamic-import-webpack']
+        }
       }
     ]
   }
-  // mode: 'none'
 }

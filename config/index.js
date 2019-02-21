@@ -7,6 +7,7 @@ module.exports = {
     port: 8080
   },
   build: {
-    assetsRoot: path.join(__dirname, '../dist')
+    assetsRoot: path.join(__dirname, '../dist'),
+    assetsSubDirectory: 'static'
   }
 }

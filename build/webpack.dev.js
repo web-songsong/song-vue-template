@@ -1,11 +1,9 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const webpack = require('webpack')
-const Dashboard = require('webpack-dashboard')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const config = require('../config')
-// const DashboardPlugin = require('webpack-dashboard/plugin')
-// const dashboard = new Dashboard()
+
 module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
@@ -49,6 +47,5 @@ module.exports = merge(common, {
       },
       clearConsole: true
     })
-    // new DashboardPlugin(dashboard.setData)
   ]
 })
