@@ -1,11 +1,15 @@
 <template>
   <div>
+    aslkfjasdfasdfasf
     asdf
-    <router-view />
   </div>
 </template>
+
 <script>
 export default {
-
+  name: 'song'
 }
 </script>
+
+<style scoped>
+</style>

@@ -16,7 +16,7 @@ module.exports = {
     path: config.build.assetsRoot
   },
   plugins: [
-    // new CleanWebpackPlugin([config.build.assetsRoot]),
+    new CleanWebpackPlugin([config.build.assetsRoot]),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.join('index.html')
