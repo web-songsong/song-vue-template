@@ -1,13 +1,16 @@
 {
   "name": "song-vue-template",
   "version": "0.2.13",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
   "dependencies": {
     "vue": "^2.5.17"
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
+    "lawst 2 versions",
     "not ie <= 8"
   ],
   "description": "this vue template",
@@ -28,7 +31,11 @@
   },
   "homepage": "https://websong.xin/",
   "devDependencies": {
+    "clean-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0",
+    "webpack-merge": "^4.2.1"
   }
 }
