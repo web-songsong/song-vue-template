@@ -1,5 +1,5 @@
 const path = require('path')
-const packages = require.context('../packages', true, /index\.vue$/)
+const packages = require.context('../packages', true, /main\.vue$/)
 const config = require('../config')
 
 const components = packages.keys().map(ele => {
@@ -20,14 +20,12 @@ const components = packages.keys().map(ele => {
   }
 })
 
-console.log('asdfasdfasdf')
+console.log(components)
 const install = Vue => {
-  console.log('asdfasf')
-  components.forEach(itme => {
+  components.forEach(item => {
     Vue.component(item.name, item.component)
   })
 }
-
 module.exports = {
   install
 }
