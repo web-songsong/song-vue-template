@@ -32,17 +32,22 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        include: [resolve('examples')]
+        include: [resolve('examples'), resolve('packages')]
+      },
+      {
+        test: /\.styl(us)?$/,
+        loader: ['vue-style-loader', 'css-loader', 'stylus-loader'],
+        include: [resolve('examples'), resolve('packages')]
       },
       {
         test: /\.css$/,
         loader: ['style-loader', 'css-loader'],
-        exclude: /node_modules/
+        include: [resolve('examples'), resolve('packages')]
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('examples')],
+        include: [resolve('examples'), resolve('packages')],
         options: {
           babelrc: false,
           plugins: ['dynamic-import-webpack']
