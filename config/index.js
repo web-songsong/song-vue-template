@@ -7,7 +7,8 @@ module.exports = {
     port: 8080
   },
   build: {
+    componentsPrefix: 'Svt',
     assetsRoot: path.join(__dirname, '../dist'),
-    assetsSubDirectory: 'static'
+    assetsSubDirectory: ''
   }
 }

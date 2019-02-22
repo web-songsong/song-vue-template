@@ -4,13 +4,10 @@ const webpack = require('webpack')
 const path = require('path')
 const config = require('../config')
 module.exports = merge(common, {
-  mode: 'production',
-  devtool: 'source-map',
+  mode: 'none',
+  // devtool: 'source-map',
   output: {
-    filename: path.posix.join(
-      config.build.assetsSubDirectory,
-      'js/[name].[chunkhash].js'
-    )
+    filename: path.posix.join(config.build.assetsSubDirectory, 'index.js')
   },
   plugins: [new webpack.HashedModuleIdsPlugin()]
 })

@@ -1,6 +1,6 @@
 <template>
   <div>
-    asdf
+    asdfasflk
     <router-view />
   </div>
 </template>

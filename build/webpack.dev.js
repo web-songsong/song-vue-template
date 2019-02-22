@@ -1,12 +1,14 @@
+const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const webpack = require('webpack')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('../config')
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  entry: './examples/entry.js',
   devServer: {
     contentBase: false,
     hot: true,
@@ -21,6 +23,9 @@ module.exports = merge(common, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join('index.html')
+    }),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: [

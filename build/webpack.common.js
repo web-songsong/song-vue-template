@@ -1,5 +1,4 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const config = require('../config')
@@ -9,17 +8,13 @@ function resolve(dir) {
 }
 module.exports = {
   context: path.resolve(__dirname, '..'),
-  entry: './examples/entry.js',
+  // entry: './examples/entry.js',
+  entry: './src/components.js',
   output: {
     filename: '[name].js',
     path: config.build.assetsRoot
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join('index.html')
-    })
-  ],
+  plugins: [new VueLoaderPlugin()],
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
