@@ -1,8 +1,8 @@
 <template>
   <dir class="wrp">
     song
-    <svt-button />
+    <svt-switch />
   </dir>
 </template>
-<style lang="stylus" scoped>
+ <style lang="stylus" scoped>
 </style>
