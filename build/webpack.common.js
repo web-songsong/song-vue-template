@@ -11,11 +11,8 @@ module.exports = {
   context: path.resolve(__dirname, '..'),
   entry: './examples/entry.js',
   output: {
-    filename: path.posix.join(
-      config.build.assetsSubDirectory,
-      'js/[name].[chunkhash].js'
-    ),
-    path: config.build.assetsRoot
+    filename: '[name].js',
+    path: config.build.assetsRoot,
   },
   plugins: [
     new VueLoaderPlugin(),

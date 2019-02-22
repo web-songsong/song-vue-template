@@ -1,9 +1,15 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const webpack = require('webpack')
-
+const path = require('path')
+const config = require('../config')
 module.exports = merge(common, {
   // devtool: 'source-map',
-  plugins: [new webpack.HashedModuleIdsPlugin()],
-  mode: 'none'
+  output: {
+    filename: path.posix.join(
+      config.build.assetsSubDirectory,
+      'js/[name].[chunkhash].js'
+    )
+  },
+  plugins: [new webpack.HashedModuleIdsPlugin()]
 })
