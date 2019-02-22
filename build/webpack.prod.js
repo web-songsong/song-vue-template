@@ -4,7 +4,8 @@ const webpack = require('webpack')
 const path = require('path')
 const config = require('../config')
 module.exports = merge(common, {
-  // devtool: 'source-map',
+  mode: 'production',
+  devtool: 'source-map',
   output: {
     filename: path.posix.join(
       config.build.assetsSubDirectory,

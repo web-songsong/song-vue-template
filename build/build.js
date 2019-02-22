@@ -11,7 +11,7 @@ const webpackConfig = require('./webpack.prod')
 const spinner = ora('编译打包中...')
 spinner.start()
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+rm(path.join(config.build.assetsRoot), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()

@@ -12,7 +12,7 @@ module.exports = {
   entry: './examples/entry.js',
   output: {
     filename: '[name].js',
-    path: config.build.assetsRoot,
+    path: config.build.assetsRoot
   },
   plugins: [
     new VueLoaderPlugin(),
