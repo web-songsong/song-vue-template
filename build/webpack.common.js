@@ -1,8 +1,6 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-
 const config = require('../config')
-
 function resolve(dir) {
   return path.resolve(__dirname, '..', dir)
 }
@@ -29,16 +27,6 @@ module.exports = {
         loader: 'vue-loader',
         include: [resolve('examples'), resolve('packages')]
       },
-      // {
-      //   test: /\.styl(us)?$/,
-      //   loader: ['vue-style-loader', 'css-loader', 'stylus-loader'],
-      //   include: [resolve('examples'), resolve('packages')]
-      // },
-      // {
-      //   test: /\.css$/,
-      //   loader: ['style-loader', 'css-loader'],
-      //   include: [resolve('examples'), resolve('packages')]
-      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',

@@ -2,12 +2,13 @@
   "name": "song-vue-template",
   "version": "1.0.0",
   "scripts": {
-    "build": "node build/build.js",
+    "npm:build": "node build/build.js",
     "dev": "webpack-dev-server --progress --config build/webpack.dev.js ",
     "start": "yarn dev"
   },
   "main": "dist/index.js",
   "dependencies": {
+    "lib-flexible": "^0.3.2",
     "vue": "^2.5.17"
   },
   "browserslist": [
@@ -48,6 +49,8 @@
     "node-notifier": "^5.4.0",
     "ora": "^3.1.0",
     "postcss-loader": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
+    "postcss-pxtorem": "^4.0.1",
     "rimraf": "^2.6.3",
     "semver": "^5.6.0",
     "shelljs": "^0.8.3",
