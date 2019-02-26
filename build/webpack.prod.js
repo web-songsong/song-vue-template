@@ -1,11 +1,18 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const webpack = require('webpack')
 const utils = require('./utils')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = merge(common, {
-  mode: 'none',
+  mode: 'production',
   // devtool: 'source-map',
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: false,
+      extract: true,
+      usePostCSS: true
+    })
+  },
   output: {
     filename: utils.assetsPath('index.js'),
     library: 'svt',
@@ -13,6 +20,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin({
+      filename: utils.assetsPath('css/svt.css')
+    })
   ]
 })

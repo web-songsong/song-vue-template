@@ -29,16 +29,16 @@ module.exports = {
         loader: 'vue-loader',
         include: [resolve('examples'), resolve('packages')]
       },
-      {
-        test: /\.styl(us)?$/,
-        loader: ['vue-style-loader', 'css-loader', 'stylus-loader'],
-        include: [resolve('examples'), resolve('packages')]
-      },
-      {
-        test: /\.css$/,
-        loader: ['style-loader', 'css-loader'],
-        include: [resolve('examples'), resolve('packages')]
-      },
+      // {
+      //   test: /\.styl(us)?$/,
+      //   loader: ['vue-style-loader', 'css-loader', 'stylus-loader'],
+      //   include: [resolve('examples'), resolve('packages')]
+      // },
+      // {
+      //   test: /\.css$/,
+      //   loader: ['style-loader', 'css-loader'],
+      //   include: [resolve('examples'), resolve('packages')]
+      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',

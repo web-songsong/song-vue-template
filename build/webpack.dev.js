@@ -5,10 +5,14 @@ const webpack = require('webpack')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('../config')
+const utils = require('./utils')
 
 module.exports = merge(common, {
   mode: 'development',
   entry: './examples/entry.js',
+  module: {
+    rules: utils.styleLoaders()
+  },
   devServer: {
     contentBase: false,
     hot: true,

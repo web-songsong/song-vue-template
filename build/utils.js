@@ -1,7 +1,6 @@
 var path = require('path')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var postcssConfig = require('../postcss.config.js')
 
 exports.assetsPath = function(_path) {
   var assetsSubDirectory = config.build.assetsSubDirectory
@@ -11,24 +10,26 @@ exports.assetsPath = function(_path) {
 exports.cssLoaders = function(options) {
   options = options || {}
 
-  var cssLoader = {
+  const cssLoader = {
     loader: 'css-loader',
     options: {
-      minimize: true,
       sourceMap: options.sourceMap
     }
   }
-  var postcssLoader = {
+
+  const postcssLoader = {
     loader: 'postcss-loader',
     options: {
-      sourceMap: options.sourceMap,
-      plugins: () => postcssConfig.plugins
+      sourceMap: options.sourceMap
     }
   }
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    var loaders = [cssLoader, postcssLoader]
+    const loaders = options.usePostCSS
+      ? [cssLoader, postcssLoader]
+      : [cssLoader]
+
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
@@ -43,17 +44,13 @@ exports.cssLoaders = function(options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader',
-        publicPath: options.extract.publicPath
+        fallback: 'vue-style-loader'
       })
     } else {
       return ['vue-style-loader'].concat(loaders)
     }
   }
 
-  var stylusOptions = {
-    'resolve url': true
-  }
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
@@ -61,18 +58,18 @@ exports.cssLoaders = function(options) {
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
-    stylus: generateLoaders('stylus', stylusOptions),
-    styl: generateLoaders('stylus', stylusOptions)
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus')
   }
 }
 
 // Generate loaders for standalone style files (outside of .vue)
 exports.styleLoaders = function(options) {
-  var output = []
-  console.log('xxxx', options)
-  var loaders = exports.cssLoaders(options)
-  for (var extension in loaders) {
-    var loader = loaders[extension]
+  const output = []
+  const loaders = exports.cssLoaders(options)
+
+  for (const extension in loaders) {
+    const loader = loaders[extension]
     output.push({
       test: new RegExp('\\.' + extension + '$'),
       use: loader

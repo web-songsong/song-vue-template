@@ -20,7 +20,6 @@ const components = packages.keys().map(ele => {
   }
 })
 
-console.log(components)
 const install = Vue => {
   components.forEach(item => {
     Vue.component(item.name, item.component)
