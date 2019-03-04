@@ -7,13 +7,10 @@ module.exports = function(config) {
   config.set({
     files: ['test/test.js'],
     frameworks: ['mocha', 'chai'],
-
     preprocessors: {
       'test/test.js': ['webpack', 'sourcemap']
     },
-
     reporters: ['mocha', 'coverage-istanbul'],
-
     coverageIstanbulReporter: {
       reports: ['html', 'lcovonly', 'text-summary'],
 
@@ -31,37 +28,22 @@ module.exports = function(config) {
         }
       }
     },
-
-    // webpack: {
-    //   mode: 'none',
-    //   module: {
-    //     rules: [
-    //       {
-    //         test: /\.js$/,
-    //         include: path.resolve('src/'),
-    //         use: {
-    //           loader: 'istanbul-instrumenter-loader'
-    //         }
-    //       }
-    //     ]
-    //   }
-    // },
     webpack: webpackTest,
 
     webpackMiddleware: {
       noInfo: true
     },
 
-    plugins: [
-      require('karma-webpack'),
-      require('karma-mocha'),
-      require('karma-chai'),
-      require('karma-chrome-launcher'),
-      require('karma-mocha-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('istanbul-instrumenter-loader'),
-      require('karma-sourcemap-loader')
-    ],
+    // plugins: [
+    //   require('karma-webpack'),
+    //   require('karma-mocha'),
+    //   require('karma-chai'),
+    //   require('karma-chrome-launcher'),
+    //   require('karma-mocha-reporter'),
+    //   require('karma-coverage-istanbul-reporter'),
+    //   require('istanbul-instrumenter-loader'),
+    //   require('karma-sourcemap-loader')
+    // ],
 
     browsers: ['Chrome']
   })
