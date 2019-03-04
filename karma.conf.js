@@ -6,10 +6,10 @@ const webpackTest = require('./build/webpack.test.js')
 module.exports = function(config) {
   config.set({
     files: ['test/test.js'],
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
     preprocessors: {
-      'test/test.js': ['webpack']
+      'test/test.js': ['webpack', 'sourcemap']
     },
 
     reporters: ['mocha', 'coverage-istanbul'],
@@ -59,7 +59,8 @@ module.exports = function(config) {
       require('karma-chrome-launcher'),
       require('karma-mocha-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('istanbul-instrumenter-loader')
+      require('istanbul-instrumenter-loader'),
+      require('karma-sourcemap-loader')
     ],
 
     browsers: ['Chrome']
