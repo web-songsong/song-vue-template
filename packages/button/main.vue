@@ -13,6 +13,9 @@ export default {
       default: '按钮'
     },
     userStyle: Object
+  },
+  created () {
+    console.log('asdf')
   }
 }
 </script>

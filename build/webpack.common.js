@@ -30,7 +30,13 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('examples'), resolve('packages')],
+        // include: [
+        //   resolve('examples'),
+        //   resolve('packages'),
+        //   resolve('test'),
+        //   resolve('src')
+        // ],
+        exclude: /node_modules/,
         options: {
           babelrc: false,
           plugins: ['dynamic-import-webpack']

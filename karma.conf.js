@@ -1,0 +1,67 @@
+var path = require('path')
+function resolve(dir) {
+  return path.resolve(__dirname, '..', dir)
+}
+const webpackTest = require('./build/webpack.test.js')
+module.exports = function(config) {
+  config.set({
+    files: ['test/test.js'],
+    frameworks: ['mocha'],
+
+    preprocessors: {
+      'test/test.js': ['webpack']
+    },
+
+    reporters: ['mocha', 'coverage-istanbul'],
+
+    coverageIstanbulReporter: {
+      reports: ['html', 'lcovonly', 'text-summary'],
+
+      dir: path.join(__dirname, 'coverage'),
+
+      combineBrowserReports: true,
+
+      fixWebpackSourcePaths: true,
+
+      skipFilesWithNoCoverage: true,
+
+      'report-config': {
+        html: {
+          subdir: 'html'
+        }
+      }
+    },
+
+    // webpack: {
+    //   mode: 'none',
+    //   module: {
+    //     rules: [
+    //       {
+    //         test: /\.js$/,
+    //         include: path.resolve('src/'),
+    //         use: {
+    //           loader: 'istanbul-instrumenter-loader'
+    //         }
+    //       }
+    //     ]
+    //   }
+    // },
+    webpack: webpackTest,
+
+    webpackMiddleware: {
+      noInfo: true
+    },
+
+    plugins: [
+      require('karma-webpack'),
+      require('karma-mocha'),
+      require('karma-chai'),
+      require('karma-chrome-launcher'),
+      require('karma-mocha-reporter'),
+      require('karma-coverage-istanbul-reporter'),
+      require('istanbul-instrumenter-loader')
+    ],
+
+    browsers: ['Chrome']
+  })
+}
