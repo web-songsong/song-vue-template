@@ -2,13 +2,13 @@ var path = require('path')
 function resolve(dir) {
   return path.resolve(__dirname, '..', dir)
 }
-const webpackTest = require('./build/webpack.test.js')
+const webpackTest = require('../build/webpack.test.js')
 module.exports = function(config) {
   config.set({
-    files: ['test/test.js'],
+    files: ['./test.js'],
     frameworks: ['mocha', 'chai'],
     preprocessors: {
-      'test/test.js': ['webpack', 'sourcemap']
+      './test.js': ['webpack', 'sourcemap']
     },
     reporters: ['mocha', 'coverage-istanbul'],
     coverageIstanbulReporter: {

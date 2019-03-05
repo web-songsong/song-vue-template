@@ -5,7 +5,7 @@
     "build": "node build/build.js",
     "dev": "webpack-dev-server --progress --config build/webpack.dev.js ",
     "start": "yarn dev",
-    "karma": "karma start karma.conf.js"
+    "test": "karma start test/karma.conf.js"
   },
   "main": "dist/index.js",
   "dependencies": {
