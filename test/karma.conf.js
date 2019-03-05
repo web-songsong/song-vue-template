@@ -8,13 +8,13 @@ module.exports = function(config) {
     files: ['./test.js'],
     frameworks: ['mocha', 'chai'],
     preprocessors: {
-      './test.js': ['webpack', 'sourcemap']
+      './test.js': ['webpack', 'sourcemap', 'coverage']
     },
     reporters: ['mocha', 'coverage-istanbul'],
     coverageIstanbulReporter: {
       reports: ['html', 'lcovonly', 'text-summary'],
 
-      dir: path.join(__dirname, 'coverage'),
+      dir: resolve('coverage'),
 
       combineBrowserReports: true,
 
