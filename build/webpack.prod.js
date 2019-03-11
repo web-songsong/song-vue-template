@@ -1,6 +1,8 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+
 const webpack = require('webpack')
 const utils = require('./utils')
 module.exports = merge(common, {
@@ -22,6 +24,7 @@ module.exports = merge(common, {
     new webpack.HashedModuleIdsPlugin(),
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/svt.css')
-    })
+    }),
+    new ProgressBarPlugin()
   ]
 })

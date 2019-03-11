@@ -7,7 +7,7 @@ function resolve(dir) {
 module.exports = {
   context: path.resolve(__dirname, '..'),
   // entry: './examples/entry.js',
-  entry: './src/components.js',
+  entry: './src/index.js',
   output: {
     filename: '[name].js',
     path: config.build.assetsRoot
@@ -17,11 +17,18 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '@': resolve('examples')
+      '@': resolve('examples'),
+      main: resolve('src')
     }
   },
   module: {
     rules: [
+      {
+        test: /\.(jsx?|babel|es6)$/,
+        include: process.cwd(),
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

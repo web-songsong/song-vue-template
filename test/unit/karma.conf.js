@@ -1,50 +1,38 @@
-var path = require('path')
-function resolve(dir) {
-  return path.resolve(__dirname, '..', dir)
-}
-const webpackTest = require('../build/webpack.test.js')
+const webpackConfig = require('../../build/webpack.test.js')
+
 module.exports = function(config) {
-  config.set({
-    files: ['./test.js'],
-    frameworks: ['mocha', 'chai'],
-    preprocessors: {
-      './test.js': ['webpack', 'sourcemap', 'coverage']
-    },
-    reporters: ['mocha', 'coverage-istanbul'],
-    coverageIstanbulReporter: {
-      reports: ['html', 'lcovonly', 'text-summary'],
-
-      dir: resolve('coverage'),
-
-      combineBrowserReports: true,
-
-      fixWebpackSourcePaths: true,
-
-      skipFilesWithNoCoverage: true,
-
-      'report-config': {
-        html: {
-          subdir: 'html'
-        }
+  const configuration = {
+    browsers: ['Chrome'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
       }
     },
-    webpack: webpackTest,
-
+    frameworks: ['mocha', 'sinon-chai'],
+    reporters: ['spec', 'coverage'],
+    files: ['./index.js'],
+    preprocessors: {
+      './index.js': ['webpack', 'sourcemap']
+    },
+    webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
     },
+    coverageReporter: {
+      dir: './coverage',
+      reporters: [{ type: 'lcov', subdir: '.' }, { type: 'text-summary' }]
+    },
+    client: {
+      mocha: {
+        timeout: 4000
+      }
+    }
+  }
 
-    // plugins: [
-    //   require('karma-webpack'),
-    //   require('karma-mocha'),
-    //   require('karma-chai'),
-    //   require('karma-chrome-launcher'),
-    //   require('karma-mocha-reporter'),
-    //   require('karma-coverage-istanbul-reporter'),
-    //   require('istanbul-instrumenter-loader'),
-    //   require('karma-sourcemap-loader')
-    // ],
+  if (process.env.TRAVIS) {
+    configuration.browsers = ['Chrome_travis_ci']
+  }
 
-    browsers: ['Chrome']
-  })
+  config.set(configuration)
 }
