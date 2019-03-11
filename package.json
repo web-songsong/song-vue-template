@@ -9,6 +9,7 @@
   },
   "main": "dist/index.js",
   "dependencies": {
+    "element-ui": "^2.6.1",
     "lib-flexible": "^0.3.2",
     "vue": "^2.5.17"
   },

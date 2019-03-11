@@ -8,7 +8,7 @@ module.exports = {
     cssSourceMap: false
   },
   build: {
-    componentsPrefix: 'Svt',
+    componentsPrefix: 'El',
     assetsRoot: path.join(__dirname, '../dist'),
     assetsSubDirectory: ''
   }

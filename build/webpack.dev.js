@@ -19,7 +19,7 @@ module.exports = merge(common, {
     progress: false,
     overlay: { warnings: false, errors: true },
     open: false,
-    host: config.dev.host,
+    host: '0.0.0.0',
     quiet: true,
     port: config.dev.port,
     clientLogLevel: 'none' // 浏览器不显示编译过程
@@ -41,7 +41,7 @@ module.exports = merge(common, {
       onErrors: () => {
         const notifier = require('node-notifier')
 
-        return (severity, errors) => {
+        return (severity, errjors) => {
           if (severity !== 'error') return
 
           const error = errors[0]
