@@ -6,7 +6,6 @@ function resolve(dir) {
 }
 module.exports = {
   context: path.resolve(__dirname, '..'),
-  // entry: './examples/entry.js',
   entry: './src/index.js',
   output: {
     filename: '[name].js',
@@ -37,12 +36,6 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        // include: [
-        //   resolve('examples'),
-        //   resolve('packages'),
-        //   resolve('test'),
-        //   resolve('src')
-        // ],
         exclude: /node_modules/,
         options: {
           babelrc: false,

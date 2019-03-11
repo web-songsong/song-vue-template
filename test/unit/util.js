@@ -1,7 +1,6 @@
 import Vue from 'vue'
-import Element from 'main/index.js'
-
-Vue.use(Element)
+// import Element from 'main/index.js'
+// Vue.use(Element)
 
 let id = 0
 
