@@ -43,7 +43,7 @@ export const createVue = function(Compo, mounted = false) {
  * @param  {Boolean=false} mounted  - 是否添加到 DOM 上
  * @return {Object} vm
  */
-export const createTest = function(Compo, propsData = {}, mounted = false) {
+export const createTest = function(Compo, propsData = {}, mounted = true) {
   if (propsData === true || propsData === false) {
     mounted = propsData
     propsData = {}

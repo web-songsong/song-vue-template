@@ -7,7 +7,6 @@ const webpack = require('webpack')
 const utils = require('./utils')
 module.exports = merge(common, {
   mode: 'production',
-  // devtool: 'source-map',
   module: {
     rules: utils.styleLoaders({
       sourceMap: false,

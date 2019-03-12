@@ -1,78 +1,40 @@
 <template>
-  <button
-    class="el-button"
-    @click="handleClick"
-    :disabled="buttonDisabled || loading"
-    :autofocus="autofocus"
-    :type="nativeType"
-    :class="[
-      type ? 'el-button--' + type : '',
-      buttonSize ? 'el-button--' + buttonSize : '',
-      {
-        'is-disabled': buttonDisabled,
-        'is-loading': loading,
-        'is-plain': plain,
-        'is-round': round,
-        'is-circle': circle
-      }
-    ]"
-  >
-    <i class="el-icon-loading" v-if="loading"></i>
-    <i :class="icon" v-if="icon && !loading"></i>
-    <span v-if="$slots.default"><slot></slot></span>
-  </button>
+  <div class="svt-button"
+       :style="userStyle">
+    {{text}}
+  </div>
 </template>
 <script>
-  export default {
-    name: 'ElButton',
-
-    inject: {
-      elForm: {
-        default: ''
-      },
-      elFormItem: {
-        default: ''
-      }
+export default {
+  props: {
+    color: String,
+    text: {
+      type: String,
+      default: '按钮'
     },
-
-    props: {
-      type: {
-        type: String,
-        default: 'default'
-      },
-      size: String,
-      icon: {
-        type: String,
-        default: ''
-      },
-      nativeType: {
-        type: String,
-        default: 'button'
-      },
-      loading: Boolean,
-      disabled: Boolean,
-      plain: Boolean,
-      autofocus: Boolean,
-      round: Boolean,
-      circle: Boolean
-    },
-
-    computed: {
-      _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
-      },
-      buttonSize() {
-        return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
-      },
-      buttonDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
-      }
-    },
-
-    methods: {
-      handleClick(evt) {
-        this.$emit('click', evt);
-      }
-    }
-  };
+    userStyle: Object
+  }
+}
 </script>
+<style lang="stylus" scoped>
+.svt-button
+  $btn()
+  width 100%
+  height 60px
+  margin 0
+  background #de615e
+  border 0
+  font-family Robotoaaa, sans-serif
+  font-size 20px
+  font-weight 300
+  line-height 60px
+  color #fff
+  border-radius 4px
+  text-align center
+  opacity 1
+  transition opacity 0.5s
+
+  &:hover
+    opacity 0.6
+    transition all 0.5s
+</style>
