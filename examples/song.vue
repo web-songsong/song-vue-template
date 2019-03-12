@@ -1,7 +1,7 @@
 <template>
   <dir class="wrp">
     song
-    <svt-input />
+    <svt-button />
   </dir>
 </template>
  <style lang="stylus" scoped>

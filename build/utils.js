@@ -2,7 +2,6 @@ var path = require('path')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-
 exports.assetsPath = function(_path) {
   var assetsSubDirectory = config.build.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
@@ -51,6 +50,9 @@ exports.cssLoaders = function(options) {
       return ['vue-style-loader'].concat(loaders)
     }
   }
+  let stylusOptions = {
+    import: [path.join(__dirname, '../src/style/common.styl')]
+  }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
@@ -59,8 +61,8 @@ exports.cssLoaders = function(options) {
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
-    stylus: generateLoaders('stylus'),
-    styl: generateLoaders('stylus')
+    stylus: generateLoaders('stylus', stylusOptions),
+    styl: generateLoaders('stylus', stylusOptions)
   }
 }
 

@@ -2,8 +2,7 @@ import Vue from 'vue'
 import app from './app'
 import router from './router'
 import 'lib-flexible/flexible.js'
-import Svt from '../dist/index'
-import '../dist/css/svt.css'
+import Svt from 'main'
 Vue.use(Svt)
 new Vue({
   render: h => h(app),

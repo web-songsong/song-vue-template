@@ -11,7 +11,9 @@ module.exports = merge(common, {
   mode: 'development',
   entry: './examples/entry.js',
   module: {
-    rules: utils.styleLoaders()
+    rules: utils.styleLoaders({
+      usePostCSS: true
+    })
   },
   devServer: {
     contentBase: false,
