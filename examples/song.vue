@@ -1,8 +1,28 @@
 <template>
   <dir class="wrp">
-    song
-    <svt-button />
+    <button @click="song">song</button>
+    <!-- <svt-toast :show="show" /> -->
   </dir>
-</template>
- <style lang="stylus" scoped>
+</template> 
+<script>
+export default {
+  data () {
+    return {
+      show: false
+    }
+  },
+  methods: {
+    song () {
+      console.log(this)
+      this.$haha()
+    }
+  },
+  created () {
+    console.log('asdf')
+
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
 </style>

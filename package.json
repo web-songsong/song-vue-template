@@ -96,6 +96,7 @@
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-create-api": "^0.2.0",
     "vue-loader": "^15.6.4",
     "vue-router": "^3.0.2",
     "vue-style-loader": "^4.1.2",
