@@ -2,7 +2,16 @@ const path = require('path')
 const packages = require.context('../packages', true, /main\.vue$/)
 const config = require('../config')
 
+const CreateAPI = require('vue-create-api')
 const components_obj = {}
+const CreatedVueAPI = (Vue, comment) => {
+  Vue.use(CreateAPI, {
+    componentPrefix: 'Svt',
+    apiPrefix: '$'
+  })
+  Vue.createAPI(comment, true)
+}
+const VueAPIList = ['Toast']
 const components = packages.keys().map(ele => {
   const ele_name = path.join(ele, '../..')
   const name = `${ele_name[0].toUpperCase()}${ele_name.slice(1).toLowerCase()}`

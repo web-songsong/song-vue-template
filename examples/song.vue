@@ -6,18 +6,20 @@
 </template> 
 <script>
 export default {
-  data () {
+  data() {
     return {
       show: false
     }
   },
   methods: {
-    song () {
-      console.log(this)
-      this.$haha()
+    song() {
+      this.show = !this.show
+      this.$Toast({
+        vi: this.show
+      })
     }
   },
-  created () {
+  created() {
     console.log('asdf')
 
   }

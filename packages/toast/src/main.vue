@@ -1,7 +1,9 @@
 <template>
-  <transition name="fade">
-    <div v-if="show">
-      asf
+  <transition name="fade"
+              appear>
+
+    <div v-if="vi">
+      {{vi}}
     </div>
   </transition>
 </template>
@@ -9,7 +11,10 @@
 <script>
 export default {
   props: {
-    show: Boolean
+    vi: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>

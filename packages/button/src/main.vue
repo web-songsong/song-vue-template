@@ -6,7 +6,6 @@
 </template>
 <script >
 export default {
-  name: 'haha',
   props: {
     color: String,
     text: {
