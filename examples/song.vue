@@ -1,19 +1,21 @@
 <template>
   <dir class="wrp">
-    <button @click="song">song</button>
-    <button @click="haha">haha</button>
-    <!-- <svt-toast :show="show" /> -->
+    <svt-input v-model="name" />
+    {{name}}
+    <svt-button @click="song"
+                text="song" />
   </dir>
 </template> 
 <script>
 export default {
-
+  data() {
+    return {
+      name: 'adf'
+    }
+  },
   methods: {
-    song () {
-      this.$Toast({ name: 'asdf' })
-    },
-    haha () {
-      this.$router.push('/song')
+    song() {
+      this.$Toast()
     }
   }
 }
