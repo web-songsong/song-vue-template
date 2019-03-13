@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import svt from 'main/index.js'
+import svt from 'main'
 Vue.use(svt)
 
 const testsContext = require.context('./specs', true, /\.spec$/)

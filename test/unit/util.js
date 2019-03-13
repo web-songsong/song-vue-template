@@ -28,7 +28,7 @@ export const destroyVM = function(vm) {
  * @param  {Boolean=false} mounted 是否添加到 DOM 上
  * @return {Object} vm
  */
-export const createVue = function(Compo, mounted = false) {
+export const createVue = function(Compo, mounted = true) {
   if (Object.prototype.toString.call(Compo) === '[object String]') {
     Compo = { template: Compo }
   }

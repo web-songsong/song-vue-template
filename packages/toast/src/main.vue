@@ -45,6 +45,9 @@ export default {
       this.remove()
       routerPop(this)
     }
+  },
+  beforeDestroy(){
+    this.remove()
   }
 }
 </script>

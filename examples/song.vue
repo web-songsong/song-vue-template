@@ -1,6 +1,7 @@
 <template>
   <dir class="wrp">
-    <svt-input v-model="name" />
+    <svt-input v-model="name"
+               placeholder="test_text" />
     {{name}}
     <svt-button @click="song"
                 text="song" />

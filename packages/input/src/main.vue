@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       style: {
         color: 'red'
@@ -18,12 +18,16 @@ export default {
     }
   },
   props: {
+    /* 类型 */
     type: {
       type: String,
       default: 'text'
     },
+    /* 输入框占位文本 */
     placeholder: String,
+    /* 输入看内容 */
     value: String,
+    /* 自定义样式 */
     userStyle: Object
   }
 }

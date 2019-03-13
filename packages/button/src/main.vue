@@ -1,9 +1,7 @@
 <template>
   <div class="svt-button"
        @click="$emit('click',$event)"
-       :style="userStyle">
-    {{text}}
-  </div>
+       :style="userStyle">{{text}}</div>
 </template>
 <script >
 export default {
