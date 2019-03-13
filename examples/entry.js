@@ -5,12 +5,9 @@ import 'lib-flexible/flexible.js'
 import CreateAPI from 'vue-create-api'
 import Svt from 'main'
 import { Toast } from 'main'
-Vue.use(CreateAPI, {
-  componentPrefix: 'Svt',
-  apiPrefix: '$'
-})
-Vue.createAPI(Toast, true)
-// Vue.use(Svt)
+import Hello from './Hello.vue'
+
+Vue.use(Svt)
 new Vue({
   render: h => h(app),
   router
