@@ -1,6 +1,6 @@
 {
   "name": "song-vue-template",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "scripts": {
     "build": "node build/build.js",
     "dev": "webpack-dev-server --progress --config build/webpack.dev.js ",
@@ -8,8 +8,12 @@
     "test": "cross-env CI_ENV=/dev/ BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist/svt.common.js",
+    "dist/fonts/",
+    "dist/css/"
+  ],
   "dependencies": {
-    "element-ui": "^2.6.1",
     "lib-flexible": "^0.3.2",
     "vue": "^2.5.17"
   },
