@@ -5,7 +5,7 @@
     "build": "node build/build.js",
     "dev": "webpack-dev-server --progress --config build/webpack.dev.js ",
     "start": "yarn dev",
-    "test": "cross-env CI_ENV=/dev/ BABEL_ENV=test karma start test/unit/karma.conf.js"
+    "test": "cross-env CI_ENV=/dev/ BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
   },
   "main": "dist/index.js",
   "dependencies": {
