@@ -4,16 +4,15 @@
               @after-leave="handleAfterLeave">
 
     <div v-show="isVisible"
-         class="toast_wrap">
+         class="svt-toast">
       {{message}}
     </div>
   </transition>
 </template>
 
 <script>
-import { routerPush, routerPop } from 'main/js/util.js'
 export default {
-  data() {
+  data () {
     return {
       isVisible: false
     }
@@ -27,34 +26,33 @@ export default {
     /* 持续时间 */
     duration: Number
   },
-  mounted() {
-    routerPush(this)
+  mounted () {
     this.isVisible = true
     setTimeout(() => {
       this.isVisible = false
     }, this.durationTime)
   },
   computed: {
-    durationTime() {
-      if (!this.duration) return 2000
-      return this.duration
+    durationTime () {
+      let duration = Math.abs(this.duration)
+      if (!duration) return 2000
+      return duration
     }
   },
   methods: {
-    handleAfterLeave() {
-      this.remove()
-      routerPop(this)
+    handleAfterLeave () {
+      this.remove && this.remove()
     }
   },
-  beforeDestroy(){
-    this.remove()
+  beforeDestroy () {
+    this.remove && this.remove()
   }
 }
 </script>
 <style lang="stylus" scoped>
 $fade_transition()
 
-.toast_wrap
+.svt-toast
   $btn()
   min-width 380px
   width 80%

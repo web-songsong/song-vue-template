@@ -3,6 +3,7 @@
     <svt-input v-model="name"
                placeholder="test_text" />
     {{name}}
+    <svt-toast/>
     <svt-button @click="song"
                 text="song" />
   </dir>

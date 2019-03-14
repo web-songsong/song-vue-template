@@ -12,7 +12,8 @@ const components = packages.keys().map(ele => {
 
   const component_name = `${config.build.componentsPrefix}${name}`
 
-  component = ele_template.default ? ele_template.default : ele_template
+  // component = ele_template.default ? ele_template.default : ele_template
+  component = ele_template.default
   component.name = component_name
   components_obj[name] = component
   return {
@@ -30,14 +31,13 @@ const install = Vue => {
         apiPrefix: '$'
       })
       Vue.createAPI(item.component, true)
-    } else {
-      Vue.component(item.name, item.component)
     }
+    Vue.component(item.name, item.component)
   })
 }
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
-}
+// if (typeof window !== 'undefined' && window.Vue) {
+//   install(window.Vue)
+// }
 module.exports = Object.assign(
   {
     install
