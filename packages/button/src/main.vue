@@ -1,25 +1,22 @@
 <template>
-  <div class="svt-button"
+  <div class="svt_button"
        @click="$emit('click',$event)"
-       :style="userStyle">{{text}}</div>
+       :style="userStyle">
+    <slot></slot>
+  </div>
 </template>
 <script >
 export default {
   props: {
     /* 颜色 */
     color: String,
-    /* 文案 */
-    text: {
-      type: String,
-      default: '按钮'
-    },
     /* 自定义样式 */
     userStyle: Object
   }
 }
 </script>
 <style lang="stylus" scoped>
-.svt-button
+.svt_button
   $btn()
   width 100%
   height 60px

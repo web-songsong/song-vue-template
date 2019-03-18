@@ -1,5 +1,4 @@
 import { createVue, destroyVM } from '../util'
-import { Input } from 'main'
 describe('Input', () => {
   let vm
   afterEach(() => {

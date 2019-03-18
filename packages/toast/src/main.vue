@@ -4,7 +4,7 @@
               @after-leave="handleAfterLeave">
 
     <div v-show="isVisible"
-         class="svt-toast">
+         class="svt_toast">
       {{message}}
     </div>
   </transition>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isVisible: false
     }
@@ -26,33 +26,33 @@ export default {
     /* 持续时间 */
     duration: Number
   },
-  mounted () {
+  mounted() {
     this.isVisible = true
     setTimeout(() => {
       this.isVisible = false
     }, this.durationTime)
   },
   computed: {
-    durationTime () {
+    durationTime() {
       let duration = Math.abs(this.duration)
       if (!duration) return 2000
       return duration
     }
   },
   methods: {
-    handleAfterLeave () {
+    handleAfterLeave() {
       this.remove && this.remove()
     }
   },
-  beforeDestroy () {
+  beforeDestroy() {
     this.remove && this.remove()
   }
 }
 </script>
 <style lang="stylus" scoped>
-$fade_transition()
+$fade-transition()
 
-.svt-toast
+.svt_toast
   $btn()
   min-width 380px
   width 80%

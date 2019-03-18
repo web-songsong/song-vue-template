@@ -4,9 +4,16 @@ $btn()
   text-align center
   user-select none
 
-$fade_transition()
+$fade-transition()
   .fade-enter-active, .fade-leave-active
-    transition opacity .3s
+    transition opacity 0.3s
 
   .fade-enter, .fade-leave-to
     opacity 0
+
+$drawer-transition()
+  .drawer-enter-active, .drawer-leave-active
+    transition transform 0.3s
+
+  .drawer-enter, .drawer-leave-to
+    transform translate3d(100%, 0, 0)

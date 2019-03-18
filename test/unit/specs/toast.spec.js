@@ -1,5 +1,4 @@
 import { createVue, destroyVM } from '../util'
-import { Toast } from 'main'
 describe('Toast', () => {
   let vm
   afterEach(() => {
@@ -11,7 +10,7 @@ describe('Toast', () => {
         this.instance = this.$Toast()
       }
     })
-    expect(document.body.querySelector('.svt-toast')).to.exist
+    expect(document.body.querySelector('.svt_toast')).to.exist
   })
   it('remove', () => {
     vm = createVue({
@@ -19,11 +18,11 @@ describe('Toast', () => {
         this.instance = this.$Toast()
       }
     })
-    expect(document.body.querySelector('.svt-toast')).to.exist
+    expect(document.body.querySelector('.svt_toast')).to.exist
     vm.$destroy()
 
     // vm.instance.handleAfterLeave()
-    expect(document.body.querySelector('.svt-toast')).to.not.exist
+    expect(document.body.querySelector('.svt_toast')).to.not.exist
   })
   it('animatin finish', () => {
     vm = createVue({
@@ -31,9 +30,9 @@ describe('Toast', () => {
         this.instance = this.$Toast()
       }
     })
-    expect(document.body.querySelector('.svt-toast')).to.exist
+    expect(document.body.querySelector('.svt_toast')).to.exist
     vm.instance.handleAfterLeave()
-    expect(document.body.querySelector('.svt-toast')).to.not.exist
+    expect(document.body.querySelector('.svt_toast')).to.not.exist
   })
   it('vm isVisible state', done => {
     vm = createVue({

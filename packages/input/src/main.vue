@@ -1,5 +1,5 @@
 <template>
-  <div class="svt-input">
+  <div class="svt_input">
     <input :type="type"
            :placeholder="placeholder"
            :style="userStyle"
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.svt-input
+.svt_input
   input
     outline none
     width 500px
