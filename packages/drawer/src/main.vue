@@ -7,9 +7,10 @@
         <slot></slot>
       </div>
     </transition>
-    <template>
+    <template v-if="hint">
       <transition name="fade">
         <div class="drawer_hint"
+             @click="close"
              :style="userStyle"
              v-show="visible">
         </div>
@@ -30,7 +31,16 @@ export default {
       type: Boolean,
       default: false
     },
-    userStyle: Object
+    userStyle: Object,
+    hint: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    close() {
+      this.$emit('trigger', false)
+    }
   }
 }
 </script>
