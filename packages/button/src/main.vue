@@ -19,14 +19,14 @@ export default {
 .svt_button
   $btn()
   width 100%
-  height 60px
+  height 40px
   margin 0
   background #de615e
   border 0
   font-family Robotoaaa, sans-serif
   font-size 20px
   font-weight 300
-  line-height 60px
+  line-height 40px
   color #fff
   border-radius 4px
   text-align center

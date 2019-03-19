@@ -6,7 +6,6 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('../config')
 const utils = require('./utils')
-
 module.exports = merge(common, {
   mode: 'development',
   entry: './examples/entry.js',
@@ -30,7 +29,7 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join('index.html')
+      template: path.join(__dirname, '..', 'index.html')
     }),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
