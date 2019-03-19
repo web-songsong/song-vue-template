@@ -1,4 +1,4 @@
-import { createVue, destroyVM } from '../util'
+import { createVue } from '../util'
 describe('Toast', () => {
   let vm
   afterEach(() => {

@@ -7,7 +7,7 @@
       </div>
     </svt-drawer>
   </dir>
-</template> 
+</template>
 <script>
 export default {
   data() {
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     song() {
-      this.name = !this.name
+      this.name = true
     }
   }
 }

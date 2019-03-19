@@ -11,7 +11,7 @@ module.exports = merge(common, {
     rules: utils.styleLoaders({
       sourceMap: false,
       extract: true,
-      usePostCSS: true
+      usePostCSS: false
     })
   },
   output: {
@@ -23,7 +23,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/svt.css')
+      filename: utils.assetsPath('css/p_svt.css')
     }),
     new ProgressBarPlugin()
   ]
