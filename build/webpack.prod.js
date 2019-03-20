@@ -7,7 +7,7 @@ const nodeExternals = require('webpack-node-externals')
 const webpack = require('webpack')
 const utils = require('./utils')
 module.exports = merge(common, {
-  mode: 'none',
+  mode: 'production',
   module: {
     rules: utils.styleLoaders({
       sourceMap: false,
