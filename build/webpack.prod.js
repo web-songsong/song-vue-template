@@ -2,11 +2,12 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const nodeExternals = require('webpack-node-externals')
 
 const webpack = require('webpack')
 const utils = require('./utils')
 module.exports = merge(common, {
-  mode: 'production',
+  mode: 'none',
   module: {
     rules: utils.styleLoaders({
       sourceMap: false,
@@ -16,10 +17,29 @@ module.exports = merge(common, {
   },
   output: {
     filename: utils.assetsPath('index.js'),
+    // library: {
+    //   root: 'MyLibrary',
+    //   amd: 'my-library',
+    //   commonjs: 'my-common-library'
+    // },
     library: 'svt',
     libraryTarget: 'umd',
-    globalObject: 'this'
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
+  externals: [
+    Object.assign(
+      {
+        vue: {
+          root: 'Vue',
+          commonjs: 'vue',
+          commonjs2: 'vue',
+          amd: 'vue'
+        }
+      },
+      { 'vue-create-api': 'vue-create-api' }
+    ),
+    nodeExternals()
+  ],
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     new ExtractTextPlugin({

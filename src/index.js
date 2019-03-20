@@ -12,7 +12,6 @@ const components = packages.keys().map(ele => {
 
   const component_name = `${config.build.componentsPrefix}${name}`
 
-  // component = ele_template.default ? ele_template.default : ele_template
   component = ele_template.default
   component.name = component_name
   components_obj[name] = component
