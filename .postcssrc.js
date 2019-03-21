@@ -1,7 +1,5 @@
-module.exports = {
-  plugins: {
-    'postcss-px2rem': {
-      remUnit: 16
-    }
-  }
-}
+// module.exports = {
+//   plugins: {
+//     'postcss-px2rem': {}
+//   }
+// }

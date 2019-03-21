@@ -12,7 +12,7 @@ module.exports = merge(common, {
     rules: utils.styleLoaders({
       sourceMap: false,
       extract: true,
-      usePostCSS: true
+      usePostCSS: false
     })
   },
   output: {
