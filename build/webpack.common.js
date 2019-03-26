@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        include: [resolve('examples'), resolve('packages')]
+        include: [resolve('examples'), resolve('docs'), resolve('packages')]
       },
       {
         test: /\.js$/,
