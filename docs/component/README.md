@@ -2,13 +2,13 @@
 
 ## 安装
 
-### npm安装
+### npm 安装
 
 ```bash
 npm i song-vue-template -S
 ```
 
-### yarn安装
+### yarn 安装
 
 ```bash
 yarn add -D song-vue-template
@@ -28,6 +28,4 @@ Vue.use(Svt)
 new Vue({
   render: h => h(app)
 }).$mount('#app')
-
 ```
-
