@@ -52,6 +52,7 @@ function navGenerate() {
 }
 
 module.exports = {
+  dest: '../ui-dc',
   title: 'song-vue-template',
   description: 'charmingsong',
   themeConfig: {
