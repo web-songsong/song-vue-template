@@ -1,13 +1,33 @@
-# components readme.md
+# 开发指南
 
-## 介绍
+## 安装
 
-介绍
+### npm安装
 
-## 哈哈
+```bash
+npm i song-vue-template -S
+```
 
-哈哈
+### yarn安装
 
-### 嘻嘻
+```bash
+yarn add -D song-vue-template
+```
 
-嘻嘻
+## 快速上手
+
+### 组件引入
+
+```js
+import Vue from 'vue'
+import Svt from 'song-vue-template'
+import 'song-vue-template/dist/css/svt.css'
+import App from './App.vue'
+
+Vue.use(Svt)
+new Vue({
+  render: h => h(app)
+}).$mount('#app')
+
+```
+

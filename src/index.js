@@ -10,9 +10,12 @@ const components = packages.keys().map(ele => {
 
   const component_name = `${config.build.componentsPrefix}${name}`
 
-  component = ele_template.default
+  let component = ele_template.default
+
   component.name = component_name
+
   components_obj[name] = component
+
   return {
     name: component_name,
     component: component
@@ -25,9 +28,6 @@ const install = Vue => {
   })
 }
 
-module.exports = Object.assign(
-  {
-    install
-  },
-  components_obj
-)
+export default {
+  install
+}
