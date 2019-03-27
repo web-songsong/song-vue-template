@@ -23,7 +23,6 @@ import Vue from 'vue'
 import Svt from 'song-vue-template'
 import 'song-vue-template/dist/css/svt.css'
 import App from './App.vue'
-
 Vue.use(Svt)
 new Vue({
   render: h => h(app)
