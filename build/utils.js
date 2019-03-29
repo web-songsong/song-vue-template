@@ -51,7 +51,10 @@ exports.cssLoaders = function(options) {
     }
   }
   let stylusOptions = {
-    import: [path.join(__dirname, '../src/style/common.styl')]
+    import: [
+      path.join(__dirname, '../src/style/common.styl'),
+      path.join(__dirname, '../src/style/style.styl')
+    ]
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html

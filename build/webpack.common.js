@@ -41,6 +41,23 @@ module.exports = {
           babelrc: false,
           plugins: ['dynamic-import-webpack']
         }
+      },
+      {
+        test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+        loader: 'url-loader',
+        exclude: [resolve('examples/static/icons')],
+        query: {
+          limit: 10000,
+          name: path.posix.join('img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [resolve('examples/static/icons')],
+        options: {
+          symbloId: 'icon-[name]'
+        }
       }
     ]
   }

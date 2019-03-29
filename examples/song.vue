@@ -1,18 +1,15 @@
 <template>
   <dir class="wrp">
-    <svt-button @click="song">adf</svt-button>
-    <svt-drawer v-model="name">
-      <div class="test">
-        <svt-button @click="name = !name">off</svt-button>
-      </div>
-    </svt-drawer>
+    <svt-button type="warning"
+                round>默认按钮默认按钮默认按钮</svt-button>
   </dir>
 </template>
 <script>
 export default {
   data() {
     return {
-      name: false
+      name: false,
+      icon
     }
   },
   methods: {

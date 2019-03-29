@@ -1,35 +1,58 @@
 <template>
-  <div class="svt_button"
-       @click="$emit('click',$event)"
-       :style="userStyle">
+  <span class="svt_button"
+        :class="[type,round&&'round']">
+    <!-- <i v-if="icon"
+       class="icon"> -->
+    <!-- </i> -->
     <slot></slot>
-  </div>
+  </span>
 </template>
-<script >
+<script>
+import '@/src/icons/qq.svg;
 export default {
+  data() {
+    return {}
+  },
   props: {
-    /* 颜色 */
-    color: String,
-    /* 自定义样式 */
-    userStyle: Object
+    type: String,
+    round: Boolean,
+    icon: String
+  },
+  computed: {
+    typeClass() {}
   }
 }
 </script>
+
 <style lang="stylus" scoped>
 .svt_button
   $btn()
-  width 100%
-  height 40px
-  margin 0
-  background #de615e
-  border 0
-  font-family Robotoaaa, sans-serif
-  font-size 20px
-  font-weight 300
-  line-height 40px
-  color #fff
+  display inline-block
+  padding 10px 20px
+  border 1px solid #dcdfe6
   border-radius 4px
   text-align center
-  opacity 1
-  transition opacity 0.5s
+  color #606266
+  font-size 14px
+
+  .icon
+    font-size 14px
+
+.round
+  border-radius 20px
+
+.primary
+  $color-type(primary)
+
+.success
+  $color-type(success)
+
+.info
+  $color-type(info)
+
+.warning
+  $color-type(warning)
+
+.danger
+  $color-type(danger)
 </style>
