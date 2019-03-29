@@ -8,7 +8,7 @@
   </span>
 </template>
 <script>
-import '@/src/icons/qq.svg;
+// import '@/src/icons/qq.svg;
 export default {
   data() {
     return {}
