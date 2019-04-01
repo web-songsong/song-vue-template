@@ -31,7 +31,12 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        include: [resolve('examples'), resolve('docs'), resolve('packages')]
+        include: [
+          resolve('examples'),
+          resolve('docs'),
+          resolve('packages'),
+          resolve('src/components')
+        ]
       },
       {
         test: /\.js$/,
@@ -45,7 +50,7 @@ module.exports = {
       {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
-        exclude: [resolve('examples/static/icons')],
+        exclude: [resolve('src/icons')],
         query: {
           limit: 10000,
           name: path.posix.join('img/[name].[hash:7].[ext]')
@@ -54,7 +59,7 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
-        include: [resolve('examples/static/icons')],
+        include: [resolve('src/icons')],
         options: {
           symbloId: 'icon-[name]'
         }

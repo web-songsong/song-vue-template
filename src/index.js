@@ -1,8 +1,14 @@
 const path = require('path')
 const packages = require.context('../packages', true, /main\.vue$/)
 const config = require('../config')
-
 const components_obj = {}
+
+const reqIcons = require.context('./icons', false, /\.svg$/)
+reqIcons.keys().map(reqIcons)
+
+const reqComponents = require.context('./components', false, /\.vue$/)
+const commonList = reqComponents.keys().map(item => reqComponents(item).default)
+
 const components = packages.keys().map(ele => {
   const ele_name = path.join(ele, '../..')
   const name = `${ele_name[0].toUpperCase()}${ele_name.slice(1).toLowerCase()}`
@@ -23,9 +29,8 @@ const components = packages.keys().map(ele => {
 })
 
 const install = Vue => {
-  components.forEach(item => {
-    Vue.component(item.name, item.component)
-  })
+  commonList.forEach(item => Vue.component(item.name, item))
+  components.forEach(item => Vue.component(item.name, item.component))
 }
 
 export default {

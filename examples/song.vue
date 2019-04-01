@@ -1,15 +1,16 @@
 <template>
-  <dir class="wrp">
+  <div class="wrp">
     <svt-button type="warning"
-                round>默认按钮默认按钮默认按钮</svt-button>
-  </dir>
+                circle
+                icon='warning'></svt-button>
+
+  </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      name: false,
-      icon
+      name: false
     }
   },
   methods: {

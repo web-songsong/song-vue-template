@@ -1,9 +1,22 @@
-/* 方法 */
+/* button方法 */
 $btn()
   cursor pointer
   border-radius 2em
   text-align center
   user-select none
+
+/* 行高和字体行高同步 */
+$hl(x, n = 1)
+  variable = unit(x, 'px')
+  height variable
+  line-height n
+
+/* 垂直居中 */
+$middle()
+  position absolute
+  top 50%
+  left 50%
+  transform translate3d(-50%, -50%, 0)
 
 /* 透明动画 */
 $fade-transition()

@@ -1,14 +1,11 @@
 <template>
   <span class="svt_button"
-        :class="[type,round&&'round']">
-    <!-- <i v-if="icon"
-       class="icon"> -->
-    <!-- </i> -->
+        :class="[type,round&&'round',circle&&'circle']">
+    <svg-icon :icon="icon" />
     <slot></slot>
   </span>
 </template>
 <script>
-// import '@/src/icons/qq.svg;
 export default {
   data() {
     return {}
@@ -16,6 +13,7 @@ export default {
   props: {
     type: String,
     round: Boolean,
+    circle: Boolean,
     icon: String
   },
   computed: {
@@ -28,7 +26,7 @@ export default {
 .svt_button
   $btn()
   display inline-block
-  padding 10px 20px
+  padding 12px 20px
   border 1px solid #dcdfe6
   border-radius 4px
   text-align center
@@ -39,9 +37,14 @@ export default {
     font-size 14px
 
 .round
+  padding 12px 23px
   border-radius 20px
 
-.primary
+.circle
+  padding 12px
+  border-radius 50%
+
+.zprimary
   $color-type(primary)
 
 .success
