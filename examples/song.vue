@@ -1,8 +1,7 @@
 <template>
   <div class="wrp">
-    <svt-button type="warning"
-                circle
-                icon='warning'></svt-button>
+    <svt-button type="success"
+                @click="song">aaasdfasdfsdf</svt-button>
 
   </div>
 </template>
@@ -14,8 +13,8 @@ export default {
     }
   },
   methods: {
-    song() {
-      this.name = true
+    song(e) {
+      console.log(e)
     }
   }
 }

@@ -1,9 +1,9 @@
 <template>
-  <span class="svt_button"
-        :class="[type,round&&'round',circle&&'circle']">
-    <svg-icon :icon="icon" />
+  <div class="svt_button"
+       :class="[type&&type,round&&'round',]"
+       @click="$emit('click', $event)">
     <slot></slot>
-  </span>
+  </div>
 </template>
 <script>
 export default {
@@ -12,12 +12,7 @@ export default {
   },
   props: {
     type: String,
-    round: Boolean,
-    circle: Boolean,
-    icon: String
-  },
-  computed: {
-    typeClass() {}
+    round: Boolean
   }
 }
 </script>
@@ -25,9 +20,10 @@ export default {
 <style lang="stylus" scoped>
 .svt_button
   $btn()
+  $hl(14)
   display inline-block
-  padding 12px 20px
   border 1px solid #dcdfe6
+  padding 12px 20px
   border-radius 4px
   text-align center
   color #606266
@@ -40,14 +36,12 @@ export default {
   padding 12px 23px
   border-radius 20px
 
-.circle
-  padding 12px
-  border-radius 50%
-
-.zprimary
+.primary
   $color-type(primary)
 
 .success
+  background-color success
+  border-color success
   $color-type(success)
 
 .info

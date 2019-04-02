@@ -3,11 +3,11 @@ const packages = require.context('../packages', true, /main\.vue$/)
 const config = require('../config')
 const components_obj = {}
 
-const reqIcons = require.context('./icons', false, /\.svg$/)
-reqIcons.keys().map(reqIcons)
+// const reqIcons = require.context('./icons', false, /\.svg$/)
+// reqIcons.keys().map(reqIcons)
 
-const reqComponents = require.context('./components', false, /\.vue$/)
-const commonList = reqComponents.keys().map(item => reqComponents(item).default)
+// const reqComponents = require.context('./components', false, /\.vue$/)
+// const commonList = reqComponents.keys().map(item => reqComponents(item).default)
 
 const components = packages.keys().map(ele => {
   const ele_name = path.join(ele, '../..')
@@ -29,7 +29,9 @@ const components = packages.keys().map(ele => {
 })
 
 const install = Vue => {
-  commonList.forEach(item => Vue.component(item.name, item))
+  import './style/style.style'
+  import './style/common.style'
+  // commonList.forEach(item => Vue.component(item.name, item))
   components.forEach(item => Vue.component(item.name, item.component))
 }
 

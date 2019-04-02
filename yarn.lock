@@ -5649,10 +5649,6 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lib-flexible@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/lib-flexible/-/lib-flexible-0.3.2.tgz#06f5a74832314a2d35c12039bc9c3ca2daeaa426"
-
 linkify-it@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.1.0.tgz#c4caf38a6cd7ac2212ef3c7d2bde30a91561f9db"
@@ -8191,13 +8187,12 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-song-vue-template@^0.2.13:
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/song-vue-template/-/song-vue-template-0.2.13.tgz#2fe54093bcc61f582451b13daa2a3928b1343a51"
+song-vue-template@^1.2.10:
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/song-vue-template/-/song-vue-template-1.2.10.tgz#aefa577e3d5cd3db525bed474318374e09b1474b"
+  integrity sha512-4OctQbNIPEAQ/nokesqB8e1fX1P1F+XiO89Uomo185/8mfasPvnMNzxckx4afMxZjX9eLmLfha21wP3ml6H5Fw==
   dependencies:
-    lib-flexible "^0.3.2"
     vue "^2.5.17"
-    vue-router "^3.0.1"
 
 sort-keys@^1.0.0:
   version "1.1.2"

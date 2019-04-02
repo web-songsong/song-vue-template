@@ -52,8 +52,8 @@ exports.cssLoaders = function(options) {
   }
   let stylusOptions = {
     import: [
-      path.join(__dirname, '../src/style/common.styl'),
-      path.join(__dirname, '../src/style/style.styl')
+      path.join(__dirname, '../src/style/style.styl'),
+      path.join(__dirname, '../src/style/common.styl')
     ]
   }
 
