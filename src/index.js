@@ -29,10 +29,11 @@ const components = packages.keys().map(ele => {
 })
 
 const install = Vue => {
-  import './style/style.style'
-  import './style/common.style'
   // commonList.forEach(item => Vue.component(item.name, item))
-  components.forEach(item => Vue.component(item.name, item.component))
+  components.forEach(item => {
+    require('./style/style.styl')
+    Vue.component(item.name, item.component)
+  })
 }
 
 export default {

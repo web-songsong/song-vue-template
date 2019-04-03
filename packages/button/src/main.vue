@@ -40,8 +40,6 @@ export default {
   $color-type(primary)
 
 .success
-  background-color success
-  border-color success
   $color-type(success)
 
 .info

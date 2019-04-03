@@ -6,7 +6,7 @@
 
 ### 基础用法
 
-<svt-button type="success"> asdf</svt-button>
+<svt-button type="warning"> asdf</svt-button>
 
 ### Attributes
 

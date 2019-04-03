@@ -50,6 +50,17 @@ function navGenerate() {
     }
   })
 }
+function addStyleResource(rule) {
+  rule
+    .use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, '../../src/style/common.styl'),
+        path.resolve(__dirname, '../../src/style/style.styl')
+      ]
+    })
+}
 
 module.exports = {
   dest: '../ui-dc',
@@ -63,5 +74,11 @@ module.exports = {
     docsDir: 'docs',
     editLinks: true,
     editLinkText: '提出您的宝贵意见！'
+  },
+  chainWebpack: config => {
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    types.forEach(type =>
+      addStyleResource(config.module.rule('stylus').oneOf(type))
+    )
   }
 }
