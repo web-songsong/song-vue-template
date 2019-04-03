@@ -6,7 +6,9 @@
 
 ### 基础用法
 
-<svt-button type="warning"> asdf</svt-button>
+<md-button-base/>
+
+<<< @/docs/.vuepress/components/md/button/base.vue
 
 ### Attributes
 

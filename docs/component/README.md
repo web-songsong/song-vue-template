@@ -11,9 +11,7 @@ npm i song-vue-template -S
 ### yarn 安装
 
 ```bash
-
 yarn add -D song-vue-template
-
 ```
 
 ## 快速上手
