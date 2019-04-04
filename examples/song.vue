@@ -1,6 +1,7 @@
 <template>
   <div class="wrp">
     <svt-button type="success"
+                disabled
                 @click="song">aaasdfasdfsdf</svt-button>
 
   </div>

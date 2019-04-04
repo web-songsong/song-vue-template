@@ -1,6 +1,6 @@
 <template>
   <div class="svt_button"
-       :class="[type&&type,round&&'round',]"
+       :class="[type&&type,round&&'round',disabled&&'disabled']"
        @click="$emit('click', $event)">
     <slot></slot>
   </div>
@@ -12,7 +12,8 @@ export default {
   },
   props: {
     type: String,
-    round: Boolean
+    round: Boolean,
+    disabled: Boolean
   }
 }
 </script>
@@ -35,6 +36,10 @@ export default {
 .round
   padding 12px 23px
   border-radius 20px
+
+.disabled
+  cursor not-allowed
+  filter opacity(50%)
 
 .primary
   $color-type(primary)
