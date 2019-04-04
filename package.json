@@ -1,6 +1,6 @@
 {
   "name": "song-vue-template",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "scripts": {
     "build": "node build/build.js",
     "dev": "webpack-dev-server --progress --config build/webpack.dev.js ",
