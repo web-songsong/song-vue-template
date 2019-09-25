@@ -7,9 +7,6 @@
 </template>
 <script>
 export default {
-  data() {
-    return {}
-  },
   props: {
     type: String,
     round: Boolean,
