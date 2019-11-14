@@ -1,5 +1,5 @@
 <template>
-  <div class="svt_drawer">
+  <div class="svt-drawer">
     <transition name="drawer">
       <div class="drawer_content"
            :style="userStyle"
@@ -48,7 +48,7 @@ export default {
 $drawer-transition()
 $fade-transition()
 
-.svt_drawer
+.svt-drawer
   .drawer_content
     position fixed
     z-index 999

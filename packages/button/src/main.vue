@@ -1,55 +1,56 @@
 <template>
-  <div class="svt_button"
+  <div class="svt-button"
        :class="[type&&type,round&&'round',disabled&&'disabled']"
        @click="$emit('click', $event)">
     <slot></slot>
   </div>
 </template>
 <script>
-export default {
-  props: {
-    type: String,
-    round: Boolean,
-    disabled: Boolean
+  export default {
+    props: {
+      type: String,
+      round: Boolean,
+      disabled: Boolean
+    }
   }
-}
 </script>
 
-<style lang="stylus" scoped>
-.svt_button
-  $btn()
-  $hl(14)
-  display inline-block
-  border 1px solid #dcdfe6
-  padding 12px 20px
-  border-radius 4px
-  text-align center
-  color #606266
-  font-size 14px
-
-  .icon
+<style lang="stylus"
+       scoped>
+  .svt-button
+    $btn()
+    $hl(14)
+    display inline-block
+    border 1px solid #dcdfe6
+    padding 12px 20px
+    border-radius 4px
+    text-align center
+    color #606266
     font-size 14px
 
-.round
-  padding 12px 23px
-  border-radius 20px
+    .icon
+      font-size 14px
 
-.disabled
-  cursor not-allowed
-  filter opacity(50%)
+  .round
+    padding 12px 23px
+    border-radius 20px
 
-.primary
-  $color-type(primary)
+  .disabled
+    cursor not-allowed
+    filter opacity(50%)
 
-.success
-  $color-type(success)
+  .primary
+    $color-type(primary)
 
-.info
-  $color-type(info)
+  .success
+    $color-type(success)
 
-.warning
-  $color-type(warning)
+  .info
+    $color-type(info)
 
-.danger
-  $color-type(danger)
+  .warning
+    $color-type(warning)
+
+  .danger
+    $color-type(danger)
 </style>
