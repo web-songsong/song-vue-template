@@ -1,4 +1,5 @@
 <template>
+
   <div class="svt-gsap">
     <svg class="stage"
          viewBox="0 0 1000 700"
@@ -81,12 +82,10 @@
             scale: 1,
             ease: 'Back.easeOut.config(1.7)'
           }),
-          TweenMax.to('#anis polygon', {
+          TweenMax.to('#anis polygon', 3, {
             attr: {
               points(index) {
-
                 let nextSpeciesPolygon = preData.ready.polygon
-                // debugger
                 return _self.parsePolygonStr(nextSpeciesPolygon[index][0])
               },
               fill(index) {
@@ -98,7 +97,7 @@
         ])
         // 2，海豚
           .add(
-            TweenMax.to('#anis polygon', 0.6, {
+            TweenMax.to('#anis polygon', 1, {
               attr: {
                 points: function (index, target) {
                   let nextSpeciesPolygon = preData.preAni.polygon
@@ -110,42 +109,40 @@
                 }
               }
               // ease: Power2.easeInOut,
-            }), '+=5'
+            }),
           )
-        //   // 3，爆炸碎片
-        //   .add(
-        //     TweenMax.to('#anis polygon', 0.6, {
-        //       attr: {
-        //         points: function (index, target) {
-        //           let nextSpeciesPolygon = preData.ready.polygon
-        //           // debugger
-        //           return _self.parsePolygonStr(nextSpeciesPolygon[index][0])
-        //         },
-        //         fill: function (index, target) {
-        //           let nextSpeciesPolygon = preData.ready.polygon
-        //           return nextSpeciesPolygon[index][1]
-        //         }
-        //       }
-        //     }),
-        //     '+=0.4'
-        //   )
-        //   // 4，“piece”logo
-        //   .add(
-        //     TweenMax.to('#anis polygon', 0.6, {
-        //       attr: {
-        //         points: function (index, target) {
-        //           let nextSpeciesPolygon = preData.title.polygon
-        //           // debugger
-        //           return _self.parsePolygonStr(nextSpeciesPolygon[index][0])
-        //         },
-        //         fill: function (index, target) {
-        //           let nextSpeciesPolygon = preData.title.polygon
-        //           return nextSpeciesPolygon[index][1]
-        //         }
-        //       }
-        //     }),
-        //     '+=0.4'
-        //   )
+          //   // 3，爆炸碎片
+          .add(
+            TweenMax.to('#anis polygon', 1, {
+              attr: {
+                points: function (index, target) {
+                  let nextSpeciesPolygon = preData.ready.polygon
+                  return _self.parsePolygonStr(nextSpeciesPolygon[index][0])
+                },
+                fill: function (index, target) {
+                  let nextSpeciesPolygon = preData.ready.polygon
+                  return nextSpeciesPolygon[index][1]
+                }
+              }
+            }),
+            '+=0.4'
+          )
+          // 4，“piece”logo
+          .add(
+            TweenMax.to('#anis polygon', 0.6, {
+              attr: {
+                points(index) {
+                  let nextSpeciesPolygon = preData.title.polygon
+                  return _self.parsePolygonStr(nextSpeciesPolygon[index][0])
+                },
+                fill(index) {
+                  let nextSpeciesPolygon = preData.title.polygon
+                  return nextSpeciesPolygon[index][1]
+                }
+              }
+            }),
+            '+=0.4'
+          )
       }
     }
   }
@@ -153,28 +150,28 @@
 
 <style scoped
        lang="stylus">
-
-  .svt-gsap {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: #fff;
-
-
-    .stage {
+  
+    .svt-gsap {
+      position: absolute;
+      left: 0;
+      top: 0;
       width: 100%;
-      height: 75%;
-      transform: scale(0.3);
+      height: 100%;
+      text-align: center;
+      color: #fff;
+
+
+      .stage {
+        width: 100%;
+        height: 75%;
+        transform: scale(0.3);
+      }
+
+
+      button {
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+
     }
-
-
-    button {
-      padding: 5px 20px;
-      cursor: pointer;
-    }
-
-  }
 </style>
