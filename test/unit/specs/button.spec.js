@@ -9,6 +9,6 @@ describe('Button', () => {
   it('create', () => {
     vm = createTest(Button, {})
     let el = vm.$el
-    expect(el.classList.contains('svt_button')).to.be.true
+    expect(el.classList.contains('svt-button')).to.be.true
   })
 })
