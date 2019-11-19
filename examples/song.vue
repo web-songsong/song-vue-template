@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <svt-gsap></svt-gsap>
+    <svt-gsap @runMain="song"/>
   </div>
 </template>
 <script>
@@ -11,8 +11,10 @@
       }
     },
     methods: {
-      song(e) {
-        console.log(e)
+      song(fn) {
+        setTimeout(() => {
+          fn()
+        },3000)
       }
     }
   }

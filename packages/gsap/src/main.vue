@@ -7,18 +7,14 @@
          xmlns="http://www.w3.org/2000/svg">
       <g id="anis"
          ref="anis">
-
         <template v-for="ele in polygonData">
           <path v-if="ele"
                 :d="parsePolygonStr(ele[0])"
-                :fill="ele[1]"/>
+                :fill="styleColor||ele[1]"/>
         </template>
 
       </g>
     </svg>
-    <div class="test"
-         ref="test">test
-    </div>
   </div>
 </template>
 
@@ -32,9 +28,14 @@
         polygonData: preData.preload.polygon,
       }
     },
+    props: {
+      styleColor: {
+        type: String,
+        default: ''
+      },
+    },
     methods: {
       parsePolygonStr(polygonStr, flag = false, width = 1000, height = 700) {
-        console.log('xxx')
         if (flag) return 'M' + polygonStr
         let pointsArr = polygonStr.split(/\s+|,\s/)
         return 'M' + pointsArr.map(function (currentVal, index) {
@@ -48,27 +49,15 @@
     }
     ,
     mounted() {
-      let tl = new TimelineMax({ delay: 0.2 })
-      //
       let anisPolygons = Array.from(this.$refs.anis.querySelectorAll('path'))
-      anisPolygons.forEach((target, index) => {
-        let tm = TweenMax.fromTo(target, 0.9, { attr: { fill: 'rgba(0,0,0,.7)' } }, {
-          attr: { fill: 'rgba(200, 20, 20, .45)' },
-          ease: 'Power0.easeNone',
-          repeat: -1,
-          yoyo: true
-        })
-        tl.add(tm, 0.9 - 0.04 * index)
-      })
-      //
-      setTimeout(() => {
-        runMain()
-      }, 2000)
+
+      this.$emit('runMain', runMain)
 
       let _self = this
-      let runMain = () => {
+
+      function runMain() {
+        let tl = new TimelineMax()
         let mapObj = { 0: '#28282a', 1: '#111', 2: '#333', 3: '#222', 4: '#121212' }
-        tl.clear()
         tl.add([
                  TweenMax.to('#anis path', {
                    attr: {
@@ -79,7 +68,7 @@
                    scale: 1,
                    ease: 'Back.easeOut.config(1.7)'
                  }),
-                 TweenMax.to('#anis path', 3, {
+                 TweenMax.to('#anis path', 2, {
                    attr: {
                      d(index) {
                        let nextSpeciesPolygon = preData.ready.polygon
@@ -111,7 +100,7 @@
           )
           // 3，爆炸碎片
           .add(
-            TweenMax.to('#anis path', 1, {
+            TweenMax.to('#anis path', 2, {
               attr: {
                 d(index) {
                   let nextSpeciesPolygon = preData.ready.polygon
@@ -128,7 +117,7 @@
           )
           // 4，“piece”logo
           .add(
-            TweenMax.to('#anis path', 0.6, {
+            TweenMax.to('#anis path', 1.3, {
               attr: {
                 d(index) {
                   let nextSpeciesPolygon = preData.title.polygon
@@ -144,7 +133,7 @@
             '+=0.4'
           )
           .add(
-            TweenMax.to('#anis path', 1, {
+            TweenMax.to('#anis path', 2, {
               attr: {
                 d(index) {
                   let nextSpeciesPolygon = preData.ready.polygon
@@ -160,7 +149,7 @@
             '+=0.4'
           )
           .add(
-            TweenMax.to('#anis path', 0.6, {
+            TweenMax.to('#anis path', 1.2, {
               attr: {
                 d(index) {
                   let nextSpeciesPolygon = preData.hxs.polygon
