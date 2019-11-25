@@ -63,7 +63,7 @@ function addStyleResource(rule) {
 }
 
 module.exports = {
-  dest: './dist',
+  dest: './dist-docs',
   title: 'song-vue-template',
   description: 'charmingsong',
   themeConfig: {
