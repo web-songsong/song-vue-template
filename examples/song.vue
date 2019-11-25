@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <svt-gsap @runMain="song"/>
+    <svt-button>asdf</svt-button>
   </div>
 </template>
 <script>
@@ -14,7 +14,7 @@
       song(fn) {
         setTimeout(() => {
           fn()
-        },3000)
+        }, 3000)
       }
     }
   }
