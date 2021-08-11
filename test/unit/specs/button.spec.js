@@ -1,5 +1,5 @@
 import { createTest, destroyVM } from '../util'
-import { Button } from 'main'
+import  Button from '../../../packages/button/src/main.vue'
 
 describe('Button', () => {
   let vm
